@@ -1,0 +1,53 @@
+{% load cards_tags %}
+
+<nav>
+    <div class="language-section">
+        <span class="language-heading">Korean</span>
+        <a href="{% url 'k-card-list' %}">View All Cards</a>
+        <a href="{% url 'all-korean' %}">Test All Cards</a>
+        <!-- loading all boxes as links from templatetags -->
+        {% k_boxes_as_links %}
+    </div>
+    <br>
+    <div class="language-section">
+        <span class="language-heading">English</span>
+        <a href="{% url 'e-card-list' %}">View All Cards</a>
+        <a href="{% url 'all-english' %}">Test All Cards</a>
+        <!-- loading all boxes as links from templatetags -->
+        {% e_boxes_as_links %}
+    </div>
+</nav>
+<!-- Style done with help from chatgpt -->
+<style>
+
+    
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.language-section {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+.language-heading {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: #00205B;
+}
+</style>

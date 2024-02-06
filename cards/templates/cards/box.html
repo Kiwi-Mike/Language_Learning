@@ -1,0 +1,14 @@
+{% extends "cards/base.html" %}
+
+{% block content %}
+<!-- box_number is the box name -->
+    <h2>🗃 {{ box_number }} Box</h2>
+    <!-- Showing how many eligible cards are left in the box -->
+    <mark>{{ eligible_cards | length }}</mark> Card{{ object_list | pluralize }} left in box.
+    If you know the card, it won't be displayed for thirty minutes.
+    <hr>
+    <!-- If check_card variable is present, loading the "I know" & "I don't know buttons" -->
+    {% if check_card %}
+        {% include "cards/card.html" with card=check_card %}
+    {% endif %}
+{% endblock content %}

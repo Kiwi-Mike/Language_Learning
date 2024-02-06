@@ -1,0 +1,7 @@
+<!-- code for creating korean box in nav-->
+
+{% for box in boxes %}
+    <a href="{% url 'kbox' box_name=box.number %}">
+        🗃 {{ box.number }} Box <mark>{{ box.card_count }}</mark>
+    </a>
+{% endfor %}

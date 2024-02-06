@@ -1,0 +1,32 @@
+<article>
+    <!-- card with english showing -->
+    <h4>{{ card.english }}</h4>
+    <!-- if checking from a box load this -->
+    {% if check_card %}
+    <details>
+        <summary>Reveal Answer</summary>
+        <p>{{ card.korean }}</p>
+    </details>
+    <hr>
+    {% include "cards/card_check_form.html" with solved=True %}
+    {% include "cards/card_check_form.html" with solved=False %}
+
+    {% elif all_check_card %}
+
+    <!-- if checking from all cards load this -->
+
+    <details>
+        <summary>Reveal Answer</summary>
+        <p>{{ card.korean }}</p>
+    </details>
+    <hr>
+
+    {% else %}
+    <!-- load main screen create / edit buttons -->
+        <p>{{ card.korean }}</p>
+        <a href="{% url 'card-update' card.id %}" role="button">
+        Edit Card
+        </a>
+        
+    {% endif %}
+ </article>

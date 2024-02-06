@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Korean Flashcards</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<!-- Style taken from an online format with minor adjustments made -->
+<style>
+    :root {
+        --accent: white;
+        --accent-bg: black;
+        --bg: #BA0C2F;
+        --text: white;
+        --text-light: #585858;
+        --border: Black;
+        --code: #d81b60;
+        --preformatted: #BA0C2F;
+    }
+    
+    article {
+        background-color: #00205B;;
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 1em;
+        margin: 1em 0;
+        color: White;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    h2, h4 {
+        margin-top: 0;
+    }
+    
+    hr {
+        background: var(--accent);
+        border-color: var(--accent);
+    }
+    
+    button,
+    a[role="button"] {
+        color: White;
+        text-decoration: none;
+        background-color: #00205B;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #ffffff; /* White border */
+        border-radius: 5px;
+    }
+    
+    input, select, textarea {
+        width: 100%;
+    }
+
+</style>
+
+
+<body>
+    <header>
+        <h1> Korean Flash Card App </h1>
+        {% include "cards/navigation.html" %}
+    </header>
+    <main>
+        {% block content %}
+            <h2> Welcome to my Flashcards app!</h2>
+        {% endblock content %}
+    </main>
+</body>
+
+</html>

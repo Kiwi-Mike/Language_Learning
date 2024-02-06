@@ -1,0 +1,7 @@
+<!-- code for creating english boxes in nav -->
+
+{% for box in boxes %}
+    <a href="{% url 'ebox' box_name=box.number %}">
+        🗃 {{ box.number }} Box <mark>{{ box.card_count }}</mark>
+    </a>
+{% endfor %}
